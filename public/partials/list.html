@@ -1,34 +1,44 @@
-<h2>{{ header }}</h2>
+<section class="columns small-7">
 
-<h3>Enter name to search:</h3>
-<input type="text" placeholder="Enter name here" ng-model="query"/>
+    <div class="row full-width align-center">
 
-<h3>Sort by</h3>
-<select ng-model="sortBy">
-    <option value="title">Title</option>
-    <option value="rank">Rank</option>
-</select>
+        <fieldset class="fieldset columns small-12 align-center">
 
-<form>
-    <label>
-        ascending
-        <input type="radio" name="reverse" ng-model="reverse" ng-value="false">
-    </label><br/>
-    <label>
-        descending
-        <input type="radio" name="reverse" ng-model="reverse" ng-value="true">
-    </label><br/>
-</form>
-<ul>
-    <li ng-repeat="movie in movies | filter: {title: query} | orderBy: sortBy : reverse">
-        <div ng-click="goToDetail(movie.rank)">
-            <div>
-                <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
-            </div>
-            <div>
-                <p>Name: {{movie.title}}</p>
-                <p>Rank: {{movie.rank}}</p>
-            </div>
+            <legend>Search a movie here!</legend>
+            <h4 class="columns small-12">Enter name to search:</h4>
+            <input class="columns small-12" type="text" placeholder="Enter name here" ng-model="query"/>
+
+            <h4 class="columns small-12">Sort by:</h4>
+            <select class="columns small-12" ng-model="sortBy">
+                <option value="title">Title</option>
+                <option value="rank">Rank</option>
+            </select>
+
+            <input id="radio-1" type="radio" name="reverse" ng-model="reverse" ng-value="false">
+
+            <label id="radio-1-label" for="radio-1">Ascending</label>
+            <input id="radio-2" type="radio" name="reverse" ng-model="reverse" ng-value="true">
+            <label id="radio-2-label" for="radio-2">Descending</label>
+
+        </fieldset>
+
+    </div>
+</section>
+
+
+
+
+<div class="columns small-7 movie-container"
+     ng-repeat="movie in movies | filter: {title: query} | orderBy: sortBy : reverse">
+    <div class="row full-width" ng-click="goToDetail(movie.rank)">
+        <div class="columns small-3">
+            <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
         </div>
-    </li>
-</ul>
+        <div class="columns small-6">
+            <h4 class="movie-title">{{movie.title}}</h4>
+            <p>Rank: {{movie.rank}}</p>
+        </div>
+    </div>
+</div>
+
+

@@ -1,9 +1,36 @@
 
-<div>
-    <a href="#/detail/{{pre}}">pre</a>
-    <a href="#/detail/{{next}}">next</a>
-{{movie}}
-    <div>
-        <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
+<div class="columns small-8 detail-content">
+    <div class="row full-width">
+        <div id="arrow-left-container" class="columns small-6 left"><a href="#/detail/{{pre}}" id="arrow-left" class="fa fa-angle-left"></a></div>
+        <div id="arrow-right-container" class="columns small-6 right"><a href="#/detail/{{next}}" id="arrow-right" class="fa fa-angle-right"></a></div>
+    </div>
+
+    <div class="row full-width align-center">
+        <div class="columns small-4">
+            <!--{{movie}}-->
+                <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
+        </div>
+        <div class="columns small-6">
+            <!--{{movie}}-->
+            <div class="row full-width">
+                <h3 class="columns small-12 movie-title">{{movie.title}}</h3>
+                <h6 class="columns small-12">Rank: {{movie.rank}}</h6>
+                <p class="columns small-12 movie-plot">
+                    {{movie.plot}}
+                </p>
+                <h6 class="columns small-12">Released: {{movie.released}}</h6>
+                <h6 class="columns small-12">Runtime: {{movie.runtime}}</h6>
+                <h6 class="columns small-12">Rated: {{movie.rated}}</h6>
+                <h6 class="columns small-12">Awards: {{movie.awards}}</h6>
+                <h6 class="columns small-12">Director(s):</h6>
+                <ul>
+                    <li class="columns small-12" ng-repeat="director in movie.director">{{director}}</li>
+                </ul>
+            </div>
+
+            <div class="row full-width">
+
+            </div>
+        </div>
     </div>
 </div>

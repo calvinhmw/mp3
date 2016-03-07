@@ -1,29 +1,16 @@
-<div>
-    <!--<ul>-->
-        <!--<li>All</li>-->
-        <!--<li ng-repeat="genre in genres">-->
-            <!--{{genre}}-->
-        <!--</li>-->
-    <!--</ul>-->
+<div class="columns small-10 gallery-content">
 
-    <form>
-        <button ng-repeat="button in genres" ng-click="filterByGenre(button)">{{button}}</button>
-    </form>
+    <div class="row full-width align-center">
+        <button class="columns hollow button" ng-repeat="button in genres" ng-click="filterByGenre(button)">{{button}}</button>
+    </div>
 
 
-    <ul>
-        <li ng-repeat="movie in selectedMovies">
-            <div ng-click="goToDetail(movie.rank)">
-                <div>
-                    <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
-                </div>
-                <!--<div>-->
-                    <!--<p>Name: {{movie.title}}</p>-->
-                    <!--<p>Rank: {{movie.rank}}</p>-->
-                <!--</div>-->
-            </div>
-        </li>
-    </ul>
+    <div class="row full-width">
+        <div class="columns small-2 movie-gallery-profile" ng-repeat="movie in selectedMovies">
+            <img ng-click="goToDetail(movie.rank)" ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
+        </div>
+    </div>
 
 
 </div>
+

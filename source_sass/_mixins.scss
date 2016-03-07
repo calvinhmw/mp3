@@ -1,1 +1,29 @@
 // Insert your mixins
+
+.movie-container, #arrow-left, #arrow-right, .movie-gallery-profile, #search, #gallery{
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+
+@mixin scale-element-on-hover($percentage) {
+  -webkit-transform: scale($percentage);
+  -moz-transform: scale($percentage);
+  -ms-transform: scale($percentage);
+  -o-transform: scale($percentage);
+  transform: scale($percentage);
+}
+
+
+@mixin align-vertically($position: relative, $distance: 50%) {
+  position: $position;
+  top: $distance;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+

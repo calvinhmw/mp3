@@ -18,10 +18,26 @@
 
 <body ng-app="mp3">
 
-    <a href="#/movies">Search</a>
-    <a href="#/movies/gallery">Gallery</a>
 
-    <div ng-view></div>
+    <section id="title" class="row full-width align-center align-middle">
+        <h2 class="columns small-6 text-center">IMDB Top 250 best movies</h2>
+    </section>
+
+
+    <section id="nav-area" class="row full-width align-center align-middle">
+        <a class="columns small-1 text-center" id="search" href="#/movies">Search</a>
+        <a class="columns small-1 text-center" id="gallery" href="#/movies/gallery">Gallery</a>
+    </section>
+
+
+
+    <div class="row align-center" ng-view></div>
+
+
+    <div id="cover-whole-page">
+        <div><i class="fa fa-spinner fa-spin"></i>
+        </div>
+    </div>
 
     <!-- DELETE following div and UNCOMMENT the previous one -->
     <!--<div class="text-center">-->

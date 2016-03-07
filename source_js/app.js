@@ -16,7 +16,3 @@ app.config(function ($routeProvider) {
     });
 });
 
-
-app.factory('httpService', ['$http', function($http){
-
-}]);
