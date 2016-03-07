@@ -1,0 +1,29 @@
+<div>
+    <!--<ul>-->
+        <!--<li>All</li>-->
+        <!--<li ng-repeat="genre in genres">-->
+            <!--{{genre}}-->
+        <!--</li>-->
+    <!--</ul>-->
+
+    <form>
+        <button ng-repeat="button in genres" ng-click="filterByGenre(button)">{{button}}</button>
+    </form>
+
+
+    <ul>
+        <li ng-repeat="movie in selectedMovies">
+            <div ng-click="goToDetail(movie.rank)">
+                <div>
+                    <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
+                </div>
+                <!--<div>-->
+                    <!--<p>Name: {{movie.title}}</p>-->
+                    <!--<p>Rank: {{movie.rank}}</p>-->
+                <!--</div>-->
+            </div>
+        </li>
+    </ul>
+
+
+</div>

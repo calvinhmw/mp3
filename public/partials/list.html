@@ -1,4 +1,3 @@
-
 <h2>{{ header }}</h2>
 
 <h3>Enter name to search:</h3>
@@ -10,14 +9,26 @@
     <option value="rank">Rank</option>
 </select>
 
+<form>
+    <label>
+        ascending
+        <input type="radio" name="reverse" ng-model="reverse" ng-value="false">
+    </label><br/>
+    <label>
+        descending
+        <input type="radio" name="reverse" ng-model="reverse" ng-value="true">
+    </label><br/>
+</form>
 <ul>
-    <li ng-repeat="movie in movies | filter: {title: query} | orderBy: sortBy">
-        <div>
-            <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
-        </div>
-        <div>
-            <p>Name: {{movie.title}}</p>
-            <p>Rank: {{movie.rank}}</p>
+    <li ng-repeat="movie in movies | filter: {title: query} | orderBy: sortBy : reverse">
+        <div ng-click="goToDetail(movie.rank)">
+            <div>
+                <img ng-src="data/images/{{movie.imdbID}}.jpg" alt="{{movie.title}}">
+            </div>
+            <div>
+                <p>Name: {{movie.title}}</p>
+                <p>Rank: {{movie.rank}}</p>
+            </div>
         </div>
     </li>
 </ul>
